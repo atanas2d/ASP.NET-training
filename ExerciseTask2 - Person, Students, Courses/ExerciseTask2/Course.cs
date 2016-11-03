@@ -12,21 +12,22 @@ namespace ExerciseTask2
     {
         private static int mIdNumber = 0;
 
-        public static int ID => mIdNumber;
+        public int ID { get; private set; }
 
-        private string Name { get; set; }
+        public string Name { get; set; }
 
-        private double Hours { get; set; }
+        public double Hours { get; set; }
 
-        private int Capacity { get; set; }
+        public int Capacity { get; set; } = 0;
 
-        private List<Student> mStudents;
+        private List<Student> mStudents = new List<Student>();
 
-        private List<Student> Students
+        public List<Student> Students
         {
             get { return this.mStudents; }
             set {
-                if (typeof(Student) == value.GetType().GetElementType())
+                if (value is IList<Student>
+                    && value.Count <= this.Capacity)
                 {
                     this.mStudents = value;
                 }
@@ -35,7 +36,7 @@ namespace ExerciseTask2
 
         public Course(string name, double hours, int capacity)
         {
-            mIdNumber++;
+            ID = ++mIdNumber;
 
             this.Name = name;
             this.Hours = hours;
@@ -44,31 +45,52 @@ namespace ExerciseTask2
 
         public void AddStudent(Student student)
         {
-            if (!this.Students.Contains(student))
+            if (!Students.Exists((s) => student.ID == s.ID))
             {
-                this.Students.Add(student);
+                Students.Add(student);
             }
         }
 
-        public void RemoveStudent(Student student)
+        public void RemoveStudent(int studentID)
         {
             foreach (var s in this.Students)
             {
-                if (student.ID == s.ID)
+                if (studentID == s.ID)
                 {
                     this.Students.Remove(s);
                 }
             }
         }
 
-        public List<Student> FindStudent(string name)
+        public List<Student> FindStudents(string[] names)
         {
-            return this.Students.Where((s) => s.Name.Contains(name)).ToList();
+            List<Student> results = null;
+
+            foreach (string name in names)
+            {
+                List<Student> foundStudents = this.Students.Where((s) => s.Name.Contains(name)).ToList();
+
+                foundStudents.ForEach(s => results.Add(s));
+            }
+
+            return results;
+        }
+
+        public bool Equals(Course course)
+        {
+            // If parameter is null return false.
+            if (course == null)
+            {
+                return false;
+            }
+
+            // Return true if the fields match:
+            return (ID == course.ID) && (Name == course.Name) && (Hours == course.Hours) && (Capacity == course.Capacity);
         }
 
         public override string ToString()
         {
-            return this.Name;
+            return Name + " - " + Hours;
         }
 
     }

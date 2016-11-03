@@ -8,7 +8,6 @@ namespace ExerciseTask2
 {
     class Person
     {
-        private string name;
         private int age;
 
         public string Name { get; set; }

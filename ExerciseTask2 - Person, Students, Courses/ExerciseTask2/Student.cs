@@ -16,29 +16,28 @@ namespace ExerciseTask2
 
         private int Age { get; set; }
 
-        private Course course = null;
+        private Course mCourse;
 
-        private Course Course
+        public Course Course
         {
-            get { return course; }
+            get { return mCourse; }
 
             set
             {
-                if (this.course != null)
+                if (mCourse != null)
                 {
                     throw new Exception("Student is already signed up");
                 }
                 else
                 {
-                    this.course = value;
+                    mCourse = value;
                 }
             } 
-            
         }
 
         public Student() : base()
         {
-            ID = mIdNumber++;
+            ID = ++mIdNumber;
         }
 
         public Student(string fullName) : this()
@@ -51,16 +50,16 @@ namespace ExerciseTask2
             this.Age = age;
         }
 
-        public void signCourse(Course course)
+        public bool Equals(Student student)
         {
-            try
+            // If parameter is null return false.
+            if (student == null)
             {
-                this.Course = course;
+                return false;
             }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            
+            // Return true if the fields match:
+            return (ID == student.ID) && (Name == student.Name) && (Age == student.Age);
         }
 
         public override string ToString()
