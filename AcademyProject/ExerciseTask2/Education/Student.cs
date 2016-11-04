@@ -26,7 +26,7 @@ namespace ExerciseTask2.Education
             {
                 if (mCourse != null)
                 {
-                    throw new Exception("Student is already signed up");
+                    throw new StudentIsBusy("Student is already signed up");
                 }
                 else
                 {

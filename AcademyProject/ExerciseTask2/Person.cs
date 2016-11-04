@@ -22,6 +22,10 @@ namespace ExerciseTask2
                 {
                     age = value;
                 }
+                else
+                {
+                    throw new PersonAgeException("Ages should be positive integer.");
+                }
             }
         }
 

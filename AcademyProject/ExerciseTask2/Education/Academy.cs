@@ -78,13 +78,13 @@ namespace ExerciseTask2.Education
             Student student = Students.FirstOrDefault((s) => s.ID == studentID);
             if (student == null)
             {
-                throw new Exception("Student with ID " + studentID + " does not exists.");
+                throw new StudentNotFound("Student with ID " + studentID + " does not exists.");
             }
 
             Course course = Courses.FirstOrDefault((c) => c.ID == courseID);
             if (course == null)
             {
-                throw new Exception("Course with ID " + courseID + " does not exists.");    
+                throw new CourseNotFound("Course with ID " + courseID + " does not exists.");    
             }
             
             student.Course = course;

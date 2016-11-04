@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Education\CourseNotFound.cs" />
+    <Compile Include="Education\StudentIsBusy.cs" />
+    <Compile Include="Education\StudentNotFound.cs" />
+    <Compile Include="PersonAgeException.cs" />
     <Compile Include="Complex.cs" />
     <Compile Include="Education\Academy.cs" />
     <Compile Include="Education\Course.cs" />
