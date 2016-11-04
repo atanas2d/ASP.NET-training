@@ -11,23 +11,7 @@ namespace ExerciseTask2
 {
     class Academy
     {
-        private static List<Student> mStudents = new List<Student>();
-
-        public static List<Student> Students
-        {
-            get
-            {
-                return mStudents; 
-            }
-
-            set
-            {
-                if (value is IList<Student>)
-                {
-                    mStudents = value;
-                }
-            }
-        }
+        public static List<Student> Students { get; private set; }
 
         private static List<Course> mCourses;
 
@@ -55,7 +39,7 @@ namespace ExerciseTask2
             }
             if (!isStudentExists)
             {
-                mStudents.Add(student);
+                Students.Add(student);
             }
         }
 
@@ -65,7 +49,7 @@ namespace ExerciseTask2
             {
                 if (s.ID == studentID)
                 {
-                    mStudents.Remove(s);
+                    Students.Remove(s);
                 }
             }
         }

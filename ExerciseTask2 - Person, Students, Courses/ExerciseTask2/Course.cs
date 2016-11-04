@@ -12,7 +12,7 @@ namespace ExerciseTask2
     {
         private static int mIdNumber = 0;
 
-        public int ID { get; private set; }
+        public int ID { get; }
 
         public string Name { get; set; }
 
@@ -26,10 +26,13 @@ namespace ExerciseTask2
         {
             get { return this.mStudents; }
             set {
-                if (value is IList<Student>
-                    && value.Count <= this.Capacity)
+                if (value.Count <= this.Capacity)
                 {
                     this.mStudents = value;
+                }
+                else
+                {
+                    throw new Exception("Course " + Name + " capacity is full. No more students can be added.");
                 }
             }
         }
@@ -47,7 +50,15 @@ namespace ExerciseTask2
         {
             if (!Students.Exists((s) => student.ID == s.ID))
             {
-                Students.Add(student);
+                if (Capacity > Students.Count)
+                {
+                    Students.Add(student);
+                }
+                else
+                {
+                    throw new Exception("Course " + Name + " capacity is full. No more students can be added.");
+                }
+                
             }
         }
 
@@ -58,19 +69,18 @@ namespace ExerciseTask2
                 if (studentID == s.ID)
                 {
                     this.Students.Remove(s);
+                    break;
                 }
             }
         }
 
         public List<Student> FindStudents(string[] names)
         {
-            List<Student> results = null;
+            List<Student> results = new List<Student>();
 
             foreach (string name in names)
             {
-                List<Student> foundStudents = this.Students.Where((s) => s.Name.Contains(name)).ToList();
-
-                foundStudents.ForEach(s => results.Add(s));
+                results.AddRange(Students.Where((s) => s.Name.Contains(name)).ToList());
             }
 
             return results;

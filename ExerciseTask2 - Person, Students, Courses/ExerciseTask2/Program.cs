@@ -12,9 +12,8 @@ namespace ExerciseTask2
 {
     class Program
     {
-        private int Choice { get; set; }
 
-        private static void selectAction()
+        private static void SelectAction()
         {
             Console.WriteLine("Welcome to Person Class Exercise 2!" +
                               "\nPlease choose module to test..." +
@@ -34,20 +33,20 @@ namespace ExerciseTask2
             switch (choice)
             {
                 case 1:
-                    testConstructors();
+                    TestConstructors();
                     break;
                 case 2:
-                    testPeople();
+                    TestPeople();
 
                     break;
                 case 3:
                     TestAcadamyBuilder();
                     break;
             }
-            exitMethod();
+            ExitMethod();
         }
 
-        static void testConstructors()
+        static void TestConstructors()
         {
             Console.WriteLine("\nThis program will initialize Person with 3 different constructors.");
 
@@ -72,7 +71,7 @@ namespace ExerciseTask2
             Console.WriteLine(person3.Name + " " + person3.Age);
         }
 
-        private static void testPeople()
+        private static void TestPeople()
         {
             Console.WriteLine("\nThis program will show you Persons older than 18, sorted by the length of teir name." +
                               "\nEnter the Name and Age of the Person in the following format: Peter//20" +
@@ -247,7 +246,7 @@ namespace ExerciseTask2
             
         }
 
-        private static void exitMethod()
+        private static void ExitMethod()
         {
             Console.WriteLine();
 
@@ -262,7 +261,7 @@ namespace ExerciseTask2
 
             if (input == "y")
             {
-                selectAction();
+                SelectAction();
             }
             else if (input == "n")
             {
@@ -274,7 +273,7 @@ namespace ExerciseTask2
 
         static void Main(string[] args)
         {
-            selectAction();
+            SelectAction();
         }
     }
 }
