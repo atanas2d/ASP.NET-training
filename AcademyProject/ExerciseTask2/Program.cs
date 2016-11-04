@@ -20,16 +20,17 @@ namespace ExerciseTask2
                               "\nPlease choose module to test..." +
                               "\n1/ Constructors" +
                               "\n2/ People" +
-                              "\n3/ Academy builder");
+                              "\n3/ Academy builder" +
+                              "\n4/ Test Complex numbers operations.");
 
             string input;
             int choice = 0;
 
             do
             {
-                Console.WriteLine("Enter value from 1 to 3: ");
+                Console.WriteLine("Enter value from 1 to 4: ");
                 input = Console.ReadLine();
-            } while (!Int32.TryParse(input, out choice) || choice < 1 || choice > 3);
+            } while (!Int32.TryParse(input, out choice) || choice < 1 || choice > 4);
 
             switch (choice)
             {
@@ -42,6 +43,9 @@ namespace ExerciseTask2
                     break;
                 case 3:
                     TestAcadamyBuilder();
+                    break;
+                case 4:
+                    Complex.TestComplexConsole();
                     break;
             }
             ExitMethod();
@@ -186,7 +190,7 @@ namespace ExerciseTask2
                 students.Add(student);
             }
 
-            Academy.Students = students;
+                Academy.Students = students;
 
             Console.WriteLine("\n\nPlease sign students for courses in format: studentID courseID." +
                               "\n When finished with signing, enter \"quit\" to see the report.");
