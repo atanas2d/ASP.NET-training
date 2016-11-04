@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 
-namespace ExerciseTask2
+namespace ExerciseTask2.Education
 {
     class Course
     {

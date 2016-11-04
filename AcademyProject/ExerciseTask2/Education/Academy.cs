@@ -7,11 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 
-namespace ExerciseTask2
+namespace ExerciseTask2.Education
 {
     class Academy
     {
-        public static List<Student> Students { get; private set; }
+        public static List<Student> Students { get; set; }
 
         private static List<Course> mCourses;
 

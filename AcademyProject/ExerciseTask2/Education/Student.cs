@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExerciseTask2
+namespace ExerciseTask2.Education
 {
     class Student : Person
     {

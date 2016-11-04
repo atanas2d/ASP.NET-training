@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Diagnostics;
+using ExerciseTask2.Education;
 
 namespace ExerciseTask2
 {
