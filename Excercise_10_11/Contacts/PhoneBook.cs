@@ -35,19 +35,9 @@ namespace Contacts
             return _contacts.Where(c => c.Name.Contains(name)).ToList();
         }
 
-        public void Serialize(HashSet<Contact> contacts, string fileName, string serializationType)
+        public void Serialize(ISerializer serializer)
         {
-            switch (serializationType.ToLower())
-            {
-                case "json":
-                    string json = JsonConvert.SerializeObject(contacts, Formatting.Indented);
-                    break;
-                case "xml":
-
-                    break;
-                default:
-                    throw new ArgumentException($"'{serializationType}' is not'known serialization type. XML or JSON are accepted.");
-            }
+            
         }
 
         public HashSet<Contact> readContacts(IReader reader)
