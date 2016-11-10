@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D0CD1ACD-AC25-4427-A02E-31C73BBEE01B}</ProjectGuid>
+    <ProjectGuid>{56774CFB-C6AC-4184-B625-AB3EC83B9F5E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExerciseTask2</RootNamespace>
-    <AssemblyName>ExerciseTask2</AssemblyName>
+    <RootNamespace>FileIO_Pro</RootNamespace>
+    <AssemblyName>FileIO_Pro</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,21 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Education\CourseNotFound.cs" />
-    <Compile Include="Education\StudentIsBusy.cs" />
-    <Compile Include="Education\StudentNotFound.cs" />
-    <Compile Include="Education\Task.cs" />
-    <Compile Include="PersonAgeException.cs" />
-    <Compile Include="Complex.cs" />
-    <Compile Include="Education\Academy.cs" />
-    <Compile Include="Education\Course.cs" />
-    <Compile Include="Education\Helper\AcademyHelper.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="FileIO.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProgramDay3.cs" />
-    <Compile Include="ProgramDay4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Education\Student.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

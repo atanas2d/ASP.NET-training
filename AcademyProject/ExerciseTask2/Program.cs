@@ -21,16 +21,17 @@ namespace ExerciseTask2
                               "\n1/ Constructors" +
                               "\n2/ People" +
                               "\n3/ Academy builder" +
-                              "\n4/ Test Complex numbers operations.");
+                              "\n4/ Test Complex numbers operations." +
+                              "\n5/ Test grades.");
 
             string input;
             int choice = 0;
 
             do
             {
-                Console.WriteLine("Enter value from 1 to 4: ");
+                Console.WriteLine("Enter value from 1 to 5: ");
                 input = Console.ReadLine();
-            } while (!Int32.TryParse(input, out choice) || choice < 1 || choice > 4);
+            } while (!Int32.TryParse(input, out choice) || choice < 1 || choice > 5);
 
             switch (choice)
             {
@@ -46,6 +47,9 @@ namespace ExerciseTask2
                     break;
                 case 4:
                     TestComplexConsole();
+                    break;
+                case 5:
+                    TestGrades();
                     break;
             }
             ExitMethod();

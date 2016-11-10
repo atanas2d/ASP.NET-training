@@ -1,0 +1,1 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Student><Id>0</Id><Name>Nasko</Name><Age>33</Age></Student><Student><Id>1</Id><Name>Ivo</Name><Age>30</Age></Student><Student><Id>2</Id><Name>Pesho</Name><Age>20</Age></Student></ArrayOfStudent>

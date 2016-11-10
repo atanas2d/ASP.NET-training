@@ -26,6 +26,8 @@ namespace ExerciseTask2.Education
                 }
             }
         }
+
+        public static List<Task> Tasks { get; set; }
         
         public static void AddStudent(Student student)
         {
@@ -90,5 +92,7 @@ namespace ExerciseTask2.Education
             student.Course = course;
             course.AddStudent(student);
         }
+
+
     }
 }

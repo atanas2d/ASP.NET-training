@@ -70,5 +70,10 @@ namespace ExerciseTask2
             }
         }
 
+        public static void TestGrades()
+        {
+            
+        }
+
     }
 }

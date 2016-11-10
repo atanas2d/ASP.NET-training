@@ -25,7 +25,8 @@ namespace ExerciseTask2.Education
         public List<Student> Students
         {
             get { return this.mStudents; }
-            set {
+            set
+            {
                 if (value.Count <= this.Capacity)
                 {
                     this.mStudents = value;
@@ -36,6 +37,8 @@ namespace ExerciseTask2.Education
                 }
             }
         }
+
+        public List<Task> Tasks { get; private set; }
 
         public Course(string name, double hours, int capacity)
         {
@@ -58,7 +61,7 @@ namespace ExerciseTask2.Education
                 {
                     throw new Exception("Course " + Name + " capacity is full. No more students can be added.");
                 }
-                
+
             }
         }
 
@@ -86,7 +89,12 @@ namespace ExerciseTask2.Education
             return results;
         }
 
-        public bool Equals(Course course)
+        public void AddTask(Task task)
+        {
+            
+        }
+
+    public bool Equals(Course course)
         {
             // If parameter is null return false.
             if (course == null)

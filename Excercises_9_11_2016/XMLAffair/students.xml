@@ -1,0 +1,7 @@
+<root>
+  <students>
+    <student Name="Nasko" Age="33" Id="0" />
+    <student Name="Ivo" Age="30" Id="1" />
+    <student Name="Pesho" Age="20" Id="2" />
+  </students>
+</root>
